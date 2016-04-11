@@ -19,7 +19,8 @@
 
 @implementation QuerySpotcheckApi
 
-@dynamic name;
+@dynamic email;
+@dynamic password;
 
 #pragma mark - Service level methods
 // These create a QuerySpotcheckApi object.
@@ -33,11 +34,12 @@
     return query;
 }
 
-+ (instancetype)getAccount:(NSString *)name
++ (instancetype)authenticateAccount:(NSString *)email: (NSString *)password
 {
-    NSString *methodName = @"spotcheck.sayHi";
+    NSString *methodName = @"spotcheck.authenticateAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
-    query.name = name;
+    query.email = email;
+    query.password = password;
     query.expectedObjectClass = [Account class];
     return query;
 }

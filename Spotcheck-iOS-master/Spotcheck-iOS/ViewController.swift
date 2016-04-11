@@ -41,7 +41,7 @@ class ViewController: UIViewController
                 
                 print("Results: \(object) ", terminator: "\n\n\n")
                 
-                let resp = object as Account
+                let resp = object as! Account
                 
                 print("Account:\nf= \(resp.firstName)\nl= \(resp.lastName)\ne= \(resp.email)\np= \(resp.password)", terminator: "\n")
                 
@@ -61,16 +61,22 @@ class ViewController: UIViewController
             service?.retryEnabled = true
         }
         
-        let name : String = firstNameField.text!
+        let email : String = emailField.text!
+        let password : String = passwordField.text!
         
-        let query : QuerySpotcheckApi = QuerySpotcheckApi.getAccount(name) as QuerySpotcheckApi
+        let query : QuerySpotcheckApi = QuerySpotcheckApi.authenticateAccount(email,password) as QuerySpotcheckApi
         
         service!.executeQuery(query, completionHandler:
             { (ticket: GTLServiceTicket!, object: AnyObject!, error: NSError!) -> Void in
                 
                 print("Results: \(object) ", terminator: "\n\n\n")
                 
-                let resp = object as Account
+                let resp = object as! Account
+                
+                if (resp.firstName == nil)
+                {
+                    resp.firstName = "failed"
+                }
                 
                 print("Account:\nf= \(resp.firstName)\nl= \(resp.lastName)\ne= \(resp.email)\np= \(resp.password)", terminator: "\n")
                 

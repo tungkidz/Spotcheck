@@ -1,44 +1,48 @@
 package com.spotcheck;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Pair;
-import android.widget.Toast;
 
+
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.spotcheck.api.spotcheck.Spotcheck;
 
 import java.io.IOException;
 
 /**
- * Created by Matt on 2/15/16.
+ * Handles the connection with the API
  */
-public class SpotcheckAsyncTask extends AsyncTask<Pair<Context, String>, Void, String>
+public abstract class SpotcheckAsyncTask extends AsyncTask<Void,Void,Boolean>
 {
-    //private static MyApi myApiService = null;
-    private Context context;
+    final String LOCALHOST = "10.0.2.2:8080";
+    final String APPSPOT = "spotcheck-3210.appspot.com";
 
-    @Override
-    protected String doInBackground(Pair<Context, String>... params) {
-        //if(myApiService == null) {  // Only do this once
-        //    MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-        //            .setRootUrl("https://something-1223.appspot.com/_ah/api/"); //TODO: Change this line to be a link to the actual backend
-        //    // end options for devappserver
+    public Spotcheck spotcheckAPI;
+    public String error = "";
 
-        //    myApiService = builder.build();
-        //}
-
-        //context = params[0].first;
-        //String name = params[0].second;
-
-        //try {
-            //return myApiService.sayHi(name).execute().getData();
-        //} catch (IOException e) {
-            //return e.getMessage();
-        //}
-        return "";
+    public SpotcheckAsyncTask()
+    {
+        super();
+        initializeAPI();
     }
 
-    @Override
-    protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+    public void initializeAPI()
+    {
+        String rootURL = "https://"+APPSPOT+"/_ah/api/";
+        Spotcheck.Builder builder = new Spotcheck.Builder(AndroidHttp.newCompatibleTransport(),
+                new AndroidJsonFactory(), null)
+                .setRootUrl(rootURL)
+                .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer()
+                {
+                    @Override
+                    public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException
+                    {
+                        abstractGoogleClientRequest.setDisableGZipContent(true);
+                    }
+                });
+
+        spotcheckAPI = builder.build();
     }
 }

@@ -1,11 +1,13 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/l14q-ZY84W_kB_i4_fY5w458yy8\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/8RcjeCW9qgqoFhYSbyKg7LG-BK0\"",
  "discoveryVersion": "v1",
  "id": "spotcheck:v1",
  "name": "spotcheck",
  "version": "v1",
- "description": "API for the Spotcheck Backend application.",
+ "description": "This is an API",
+ "ownerDomain": "api.spotcheck.com",
+ "ownerName": "api.spotcheck.com",
  "icons": {
   "x16": "http://www.google.com/images/icons/product/search-16.gif",
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
@@ -112,10 +114,26 @@
   }
  },
  "methods": {
-  "getAccount": {
-   "id": "spotcheck.getAccount",
-   "path": "getAccount",
-   "httpMethod": "GET",
+  "authenticateAccount": {
+   "id": "spotcheck.authenticateAccount",
+   "path": "authenticateAccount",
+   "httpMethod": "POST",
+   "parameters": {
+    "email": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "password": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "email",
+    "password"
+   ],
    "response": {
     "$ref": "Account"
    },
@@ -137,27 +155,33 @@
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
    ]
-  },
-  "sayHi": {
-   "id": "spotcheck.sayHi",
-   "path": "sayHi/{name}",
-   "httpMethod": "POST",
-   "parameters": {
-    "name": {
-     "type": "string",
-     "required": true,
-     "location": "path"
+  }
+ },
+ "resources": {
+  "spotcheckApi": {
+   "methods": {
+    "getAccount": {
+     "id": "spotcheck.spotcheckApi.getAccount",
+     "path": "account/{email}",
+     "httpMethod": "GET",
+     "parameters": {
+      "email": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "email"
+     ],
+     "response": {
+      "$ref": "Account"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
     }
-   },
-   "parameterOrder": [
-    "name"
-   ],
-   "response": {
-    "$ref": "Account"
-   },
-   "scopes": [
-    "https://www.googleapis.com/auth/userinfo.email"
-   ]
+   }
   }
  }
 }

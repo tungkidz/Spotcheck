@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new SpotcheckAsyncTask().execute(new Pair<Context, String>(this, "Spotcheck Developer!"));
     }
 
     @Override

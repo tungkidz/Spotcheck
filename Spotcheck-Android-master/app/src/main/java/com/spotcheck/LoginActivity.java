@@ -1,5 +1,6 @@
 package com.spotcheck;
 
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -28,7 +29,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
-import java.lang.reflect.Array;
+import com.spotcheck.api.spotcheck.model.Account;
+import com.spotcheck.api.spotcheck.model.AccountForm;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -53,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+    private LoginTask mAuthTask = null;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -202,7 +206,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new LoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
     }
@@ -307,76 +311,67 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     /**
-     * Represents an asynchronous login/registration task used to authenticate
+     * Represents an asynchronous login task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class LoginTask extends SpotcheckAsyncTask
+    {
+            private Account account;
+            private AccountForm accountForm;
 
-        private final String mEmail;
-        private final String mPassword;
+            public LoginTask(String email, String password)
+            {
+                super();
+                accountForm = new AccountForm();
+                accountForm.setEmail(email);
+                accountForm.setPassword(password);
+            }
 
-        UserLoginTask(String email, String password) {
-            mEmail = email;
-            mPassword = password;
-        }
+            @Override
+            protected Boolean doInBackground(Void... params)
+            {
+                // set up the spotcheckAPI if not set
+                if (spotcheckAPI == null)
+                {
+                    super.initializeAPI();
+                }
 
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
+                try
+                {   // Authenticate account in server.
+                    String email = accountForm.getEmail();
+                    String password = accountForm.getPassword();
+                    account = spotcheckAPI.authenticateAccount(email, password).execute();
+                    if (account != null)
+                    {
+                        return true;
+                    }
+                } catch (IOException e)
+                {
+                    error = "Please check your internet connection and try again.";
+                }
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equalsIgnoreCase(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+            @Override
+            protected void onPostExecute(Boolean aBoolean)
+            {
+                mAuthTask = null;
+                showProgress(false);
+
+                if (aBoolean) finish();
+                else
+                {
+                    mEmailView.setError(error);
+                    mEmailView.requestFocus();
                 }
+
+                super.onPostExecute(aBoolean);
             }
 
-            //TODO: REGISTER USER
-            //DUMMY_CREDENTIALS.add(mEmail + ":" + mPassword);
-            return false;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            mAuthTask = null;
-            showProgress(false);
-            boolean accountExists = accountExists();
-            if (success) {
-                startActivity(launchMainActivity);
-                finish();
-            } else if(accountExists) {
-                // Account exists, password is wrong.
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+            @Override
+            protected void onCancelled() {
+                mAuthTask = null;
+                showProgress(false);
             }
-            else
-                mEmailView.setError("This email does not have a SpotCheck account. You can sign up for free!");
-        }
-
-        @Override
-        protected void onCancelled() {
-            mAuthTask = null;
-            showProgress(false);
-        }
-        private boolean accountExists()
-        {
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equalsIgnoreCase(mEmail)) {
-                    // Account exists.
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }

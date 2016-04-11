@@ -2,9 +2,11 @@ package com.spotcheck.entity;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 
 @Entity
+@Index
 public class Account
 {
 	@Id
@@ -21,26 +23,17 @@ public class Account
 
 	/**
 	 * Public constructor for Profile.
-	 * @param userId The user id, obtained from the email
 	 * @param firstName Any string user wants us to display him/her on this system.
 	 * @param lastName Any string user wants us to display him/her on this system.
 	 * @param email User's main e-mail address.
 	 * @param password The User's account password
 	 *
 	 */
-	public Account(String userId, String firstName, String lastName, String email, String password)
+	public Account(String firstName, String lastName, String email, String password)
 	{
-		if (userId == null) userId = "default";
-		if (firstName == null) firstName = "first name";
-		if (lastName == null) lastName = "last name";
-		if (email == null) email = "example@email.com";
-		if (password == null) password = "password";
-
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.password = password;
+		if (email == null) email = "public user";
+		userId = email;
+		update(firstName,lastName,email,password);
 	}
 
 	public void update(String firstName, String lastName, String email, String password)

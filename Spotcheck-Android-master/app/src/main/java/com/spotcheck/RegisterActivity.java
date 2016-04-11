@@ -1,9 +1,11 @@
 package com.spotcheck;
 
+import com.spotcheck.api.spotcheck.model.Account;
+import com.spotcheck.api.spotcheck.model.AccountForm;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -15,7 +17,6 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -30,9 +31,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-
-import com.appspot.spotcheck_3210.spotcheck.model.AccountForm;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+    private RegisterTask mAuthTask = null;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -254,7 +252,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(firstName, lastName, email, password);
+            mAuthTask = new RegisterTask(firstName, lastName, email, password);
             mAuthTask.execute((Void) null);
         }
     }
@@ -358,16 +356,19 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         int IS_PRIMARY = 1;
     }
 
+
     /**
-     * Represents an asynchronous login/registration task used to authenticate
+     * Represents an asynchronous registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean>
+    public class RegisterTask extends SpotcheckAsyncTask
     {
+        private Account account;
         private AccountForm accountForm;
 
-        UserLoginTask(String firstName, String lastName, String email, String password)
+        public RegisterTask(String firstName, String lastName, String email, String password)
         {
+            super();
             accountForm = new AccountForm();
             accountForm.setFirstName(firstName);
             accountForm.setLastName(lastName);
@@ -378,34 +379,53 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         @Override
         protected Boolean doInBackground(Void... params)
         {
-            // TODO: Check if email already exists in server.
-
-
-            for (String credential : LoginActivity.DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equalsIgnoreCase(accountForm.getEmail())) {
-                    // Account exists. Cannot register
-                    return false;
-                }
+            if (spotcheckAPI == null)
+            {
+                super.initializeAPI();
             }
 
-            // TODO: change this to push to server
-            //LoginActivity.DUMMY_CREDENTIALS.add(mEmail + ":" + mPassword + ": r=" + hello + ":" + mLastName);
+            try
+            {   // Check if email already exists in server.
+                //System.out.println("\n\nAccount sent = " + accountForm.getEmail());
+                String email = accountForm.getEmail();
+                account = spotcheckAPI.getAccount(email).execute();
+                if (account != null)
+                {
+                    //System.out.println("\n\nAccount returned = " + account.getEmail());
+                    error = "A Spotcheck account already uses this email!";
+                    return false;
+                }
+
+                // Save and return the saved account
+                account = spotcheckAPI.saveAccount(accountForm).execute();
+                if (account == null)
+                {
+                    error = "Sorry, something weird happened. Please try again";
+                    return false;
+                }
+            } catch (IOException e)
+            {
+                error = "Please check your internet connection and try again.";
+                return false;
+            }
+
+            //System.out.println("\n\nAccount returned: f=" + account.getFirstName());
             return true;
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(Boolean aBoolean)
+        {
             mAuthTask = null;
             showProgress(false);
 
-            if (success)
-                finish();
+            if (aBoolean) finish();
             else
             {
-                mEmailView.setError("You already have a SpotCheck account!");
+                mEmailView.setError(error);
                 mEmailView.requestFocus();
             }
+
         }
 
         @Override
@@ -414,4 +434,5 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             showProgress(false);
         }
     }
+
 }

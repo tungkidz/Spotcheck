@@ -29,7 +29,8 @@
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 
 // @property (nonatomic, copy) AccountForm *accountForm;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *password;
 
 #pragma mark - Service level methods
 // These create a GTLQuerySuggestionBeanApi object.
@@ -39,7 +40,7 @@
 //   kGTLAuthScopeSuggestionBeanApiUserinfoEmail
 // Fetches an Account.
 + (instancetype)saveAccount:(AccountForm *)accountForm;
-+ (instancetype)getAccount:(NSString *)name;
++ (instancetype)authenticateAccount:(NSString *)email:(NSString *)password;
 
 
 
