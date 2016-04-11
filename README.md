@@ -1,4 +1,5 @@
 # Spotcheck 
+Project contains iOS, Android, and Java Backend API for Spotcheck.
 
 #Installation
 Android
