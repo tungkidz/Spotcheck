@@ -41,7 +41,7 @@ class ViewController: UIViewController
                 
                 print("Results: \(object) ", terminator: "\n\n\n")
                 
-                let resp = object as! Account
+                let resp = object as Account
                 
                 print("Account:\nf= \(resp.firstName)\nl= \(resp.lastName)\ne= \(resp.email)\np= \(resp.password)", terminator: "\n")
                 
@@ -71,7 +71,7 @@ class ViewController: UIViewController
                 
                 print("Results: \(object) ", terminator: "\n\n\n")
                 
-                let resp = object as! Account
+                let resp = object as Account
                 
                 if (resp.firstName == nil)
                 {
