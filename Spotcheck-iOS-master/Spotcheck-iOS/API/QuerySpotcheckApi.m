@@ -27,7 +27,7 @@
 
 + (instancetype)saveAccount:(AccountForm *)accountForm
 {
-    NSString *methodName = @"spotcheck.saveAccount";
+    NSString *methodName = @"spotcheck.createAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.bodyObject = accountForm;
     query.expectedObjectClass = [Account class];

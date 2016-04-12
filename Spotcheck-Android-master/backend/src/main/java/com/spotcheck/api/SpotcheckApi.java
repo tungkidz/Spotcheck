@@ -31,7 +31,7 @@ public class SpotcheckApi
 	}
 
 	/**
-	 * Creates or updates an Account object associated with the given user
+	 * Creates an Account object associated with the given user
 	 * object.
 	 *
 	 * @param accountForm
@@ -40,8 +40,8 @@ public class SpotcheckApi
 	 * @throws UnauthorizedException
 	 *             when the User object is null.
 	 */
-	@ApiMethod(name = "saveAccount", path = "saveAccount", httpMethod = HttpMethod.POST)
-	public Account saveAccount(AccountForm accountForm) throws UnauthorizedException
+	@ApiMethod(name = "createAccount", path = "createAccount", httpMethod = HttpMethod.POST)
+	public Account createAccount(AccountForm accountForm) throws UnauthorizedException
 	{
 		//set account data from form input
 		String firstName = accountForm.getFirstName();
@@ -52,12 +52,47 @@ public class SpotcheckApi
 		//set account data
 		Account account = getAccount(email);
 		if (account == null)
+		{
 			account = new Account(firstName, lastName, email, password);
-		else
+
+			//save the updated account in the datastore
+			ofy().save().entity(account).now();
+			return account;
+		} else
+		{
+			return null;
+		}
+
+	}
+
+	/**
+	 * Updates an Account object associated with the given user
+	 * object.
+	 *
+	 * @param accountForm
+	 *            A AccountForm object sent from the client form.
+	 * @return Account object just created.
+	 * @throws UnauthorizedException
+	 *             when the User object is null.
+	 */
+	@ApiMethod(name = "updateAccount", path = "updateAccount", httpMethod = HttpMethod.POST)
+	public Account updateAccount(AccountForm accountForm) throws UnauthorizedException
+	{
+		//set account data from form input
+		String firstName = accountForm.getFirstName();
+		String lastName = accountForm.getLastName();
+		String email = accountForm.getEmail();
+		String password = accountForm.getPassword(); // TO DO: hash and salt
+
+		//set account data
+		Account account = getAccount(email);
+		if (account != null)
+		{
 			account.update(firstName, lastName, email, password);
 
-		//save the account in the datastore
-		ofy().save().entity(account).now();
+			//save the updated account in the datastore
+			ofy().save().entity(account).now();
+		}
 
 		return account;
 	}
@@ -68,7 +103,7 @@ public class SpotcheckApi
 	 * @return Account object.
 	 * @param email the email of the account to retrieve
 	 */
-	public Account getAccount(@Named("email") String email)
+	private Account getAccount(String email)
 	{
 		// load an Account Entity
 		Key key = Key.create(Account.class, email);

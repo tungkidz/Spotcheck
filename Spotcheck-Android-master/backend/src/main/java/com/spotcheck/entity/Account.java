@@ -10,7 +10,7 @@ import com.googlecode.objectify.annotation.Index;
 public class Account
 {
 	@Id
-	String userId;
+	Long userId;
 	String firstName;
 	String lastName;
 	String email;
@@ -32,7 +32,6 @@ public class Account
 	public Account(String firstName, String lastName, String email, String password)
 	{
 		if (email == null) email = "public user";
-		userId = email;
 		update(firstName,lastName,email,password);
 	}
 
@@ -52,6 +51,6 @@ public class Account
 
 	public String getPassword() { return password; }
 
-	public String getUserId() { return userId; }
+	public Long getUserId() { return userId; }
 
 }

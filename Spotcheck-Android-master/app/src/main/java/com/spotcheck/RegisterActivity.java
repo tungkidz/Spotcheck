@@ -385,22 +385,12 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             }
 
             try
-            {   // Check if email already exists in server.
-                //System.out.println("\n\nAccount sent = " + accountForm.getEmail());
-                String email = accountForm.getEmail();
-                account = spotcheckAPI.getAccount(email).execute();
-                if (account != null)
-                {
-                    //System.out.println("\n\nAccount returned = " + account.getEmail());
-                    error = "A Spotcheck account already uses this email!";
-                    return false;
-                }
-
-                // Save and return the saved account
-                account = spotcheckAPI.saveAccount(accountForm).execute();
+            {
+                // Create and return the saved account
+                account = spotcheckAPI.createAccount(accountForm).execute();
                 if (account == null)
                 {
-                    error = "Sorry, something weird happened. Please try again";
+                    error = "Sorry, the account cannot be created. Please try again.";
                     return false;
                 }
             } catch (IOException e)

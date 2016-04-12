@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/8RcjeCW9qgqoFhYSbyKg7LG-BK0\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/nnLvS2yhxGaK1rj_QMsL7Zoc_s4\"",
  "discoveryVersion": "v1",
  "id": "spotcheck:v1",
  "name": "spotcheck",
@@ -90,7 +90,8 @@
      "type": "string"
     },
     "userId": {
-     "type": "string"
+     "type": "string",
+     "format": "int64"
     }
    }
   },
@@ -141,9 +142,9 @@
     "https://www.googleapis.com/auth/userinfo.email"
    ]
   },
-  "saveAccount": {
-   "id": "spotcheck.saveAccount",
-   "path": "saveAccount",
+  "createAccount": {
+   "id": "spotcheck.createAccount",
+   "path": "createAccount",
    "httpMethod": "POST",
    "request": {
     "$ref": "AccountForm",
@@ -155,33 +156,21 @@
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
    ]
-  }
- },
- "resources": {
-  "spotcheckApi": {
-   "methods": {
-    "getAccount": {
-     "id": "spotcheck.spotcheckApi.getAccount",
-     "path": "account/{email}",
-     "httpMethod": "GET",
-     "parameters": {
-      "email": {
-       "type": "string",
-       "required": true,
-       "location": "path"
-      }
-     },
-     "parameterOrder": [
-      "email"
-     ],
-     "response": {
-      "$ref": "Account"
-     },
-     "scopes": [
-      "https://www.googleapis.com/auth/userinfo.email"
-     ]
-    }
-   }
+  },
+  "updateAccount": {
+   "id": "spotcheck.updateAccount",
+   "path": "updateAccount",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "AccountForm",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Account"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
   }
  }
 }
