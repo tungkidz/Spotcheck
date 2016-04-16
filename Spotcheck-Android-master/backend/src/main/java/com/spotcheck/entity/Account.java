@@ -6,15 +6,16 @@ import com.googlecode.objectify.annotation.Index;
 
 
 @Entity
-@Index
 public class Account
 {
-	@Id
-	Long userId;
+	@Id Long accountId;
 	String firstName;
 	String lastName;
-	String email;
-	String password;
+	@Index String email;
+	byte[] password;
+	byte[] salt;
+	Boolean isActive;
+	int loginCount;
 
 	/**
 	 * Just making the default constructor private.
@@ -29,19 +30,45 @@ public class Account
 	 * @param password The User's account password
 	 *
 	 */
-	public Account(String firstName, String lastName, String email, String password)
+	public Account(String firstName, String lastName, String email, byte[] password, byte[] salt)
 	{
 		if (email == null) email = "public user";
-		update(firstName,lastName,email,password);
+		update(firstName,lastName,email,password, salt);
+		isActive = true;
+		loginCount = 1;
 	}
 
-	public void update(String firstName, String lastName, String email, String password)
+	/**
+	 * Updates the Account variables.
+	 *
+	 * @param firstName the first name
+	 * @param lastName the last name
+	 * @param email the email
+	 * @param password the password
+	 * @param salt the salt
+	 */
+	public void update(String firstName, String lastName, String email, byte[] password, byte[] salt)
 	{
 		if (firstName != null) this.firstName = firstName;
 		if (lastName != null) this.lastName = lastName;
 		if (email != null) this.email = email;
 		if (password != null) this.password = password;
+		if (password != null) this.salt = salt;
 	}
+
+	/**
+	 * Sets an account's active state.
+	 * @param isActive true if logging in, false if deactivating
+	 */
+	public void setIsActive(Boolean isActive)
+	{
+		if (this.isActive = isActive)
+		{
+			loginCount++;
+		}
+	}
+
+	public Long getAccountId() { return accountId; }
 
 	public String getFirstName() { return firstName; }
 
@@ -49,8 +76,10 @@ public class Account
 
 	public String getEmail() { return email; }
 
-	public String getPassword() { return password; }
+	public byte[] getPassword() { return password; }
 
-	public Long getUserId() { return userId; }
+	public byte[] getSalt() { return salt; }
+
+	public Boolean isActive() { return isActive; }
 
 }

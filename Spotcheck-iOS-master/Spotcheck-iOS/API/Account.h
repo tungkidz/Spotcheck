@@ -23,11 +23,13 @@
 //
 
 @interface Account : GTLObject
-@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *accountId;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *salt;
+@property (nonatomic, copy) NSString *active;
 
 //needs these to match json results
 @property (nonatomic, copy) NSString *etag;
