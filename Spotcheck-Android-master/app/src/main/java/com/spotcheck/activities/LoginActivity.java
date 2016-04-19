@@ -44,7 +44,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-    public final static String EMAIL_PASSWORD_MESSAGE = "";
+	public final static String CREDENTIALS_MESSAGE = "";
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -74,8 +74,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
-        DUMMY_CREDENTIALS.add("foo@example.com:hello123:first:last");
-        DUMMY_CREDENTIALS.add("bar@example.com:world123:first:last");
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -100,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mRegisterButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchRegisterActivity.putExtra(EMAIL_PASSWORD_MESSAGE, mEmailView.getText().toString() + ":" + mPasswordView.getText().toString());
+                launchRegisterActivity.putExtra(CREDENTIALS_MESSAGE, mEmailView.getText().toString() + ":" + mPasswordView.getText().toString());
                 startActivity(launchRegisterActivity);
             }
         });
@@ -182,7 +180,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             focusView = mPasswordView;
             cancel = true;
         }
-        else if (/*! && */!isPasswordValid(password)) {
+        else if (!isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
@@ -360,10 +358,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 mAuthTask = null;
                 showProgress(false);
 
-                if (success) finish();
+                if (success)
+                {
+	                String email = account.getEmail();
+	                String firstLastName = account.getFirstName() + " " + account.getLastName();
+	                launchMainActivity.putExtra(CREDENTIALS_MESSAGE, email + ":" + firstLastName);
+	                startActivity(launchMainActivity);
+	                finish();
+                }
                 else
                 {
-                    mEmailView.setError(error);
+                    mEmailView.setError(getString(R.string.error_incorrect_authentication));
                     mEmailView.requestFocus();
                 }
 
