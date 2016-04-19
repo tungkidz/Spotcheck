@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9337C941CB678BE00572BF3 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8A1CB678BE00572BF3 /* Account.m */; };
 		C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8C1CB678BE00572BF3 /* AccountForm.m */; };
-		C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */; };
-		C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */; };
+		C9337C961CB678BE00572BF3 /* QueryAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */; };
+		C9337C971CB678BE00572BF3 /* ServiceAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */; };
 		C9337C981CB678BE00572BF3 /* SpotcheckApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */; };
 		CA68D07D1BF4910E00D5C130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */; };
 		CA68D07F1BF4910E00D5C130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07E1BF4910E00D5C130 /* ViewController.swift */; };
@@ -51,10 +51,10 @@
 		C9337C8A1CB678BE00572BF3 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C9337C8B1CB678BE00572BF3 /* AccountForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountForm.h; sourceTree = "<group>"; };
 		C9337C8C1CB678BE00572BF3 /* AccountForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountForm.m; sourceTree = "<group>"; };
-		C9337C8D1CB678BE00572BF3 /* QuerySpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySpotcheckApi.h; sourceTree = "<group>"; };
-		C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuerySpotcheckApi.m; sourceTree = "<group>"; };
-		C9337C8F1CB678BE00572BF3 /* ServiceSpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceSpotcheckApi.h; sourceTree = "<group>"; };
-		C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceSpotcheckApi.m; sourceTree = "<group>"; };
+		C9337C8D1CB678BE00572BF3 /* QueryAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryAccountApi.h; sourceTree = "<group>"; };
+		C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryAccountApi.m; sourceTree = "<group>"; };
+		C9337C8F1CB678BE00572BF3 /* ServiceAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAccountApi.h; sourceTree = "<group>"; };
+		C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAccountApi.m; sourceTree = "<group>"; };
 		C9337C911CB678BE00572BF3 /* SpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApi.h; sourceTree = "<group>"; };
 		C9337C921CB678BE00572BF3 /* SpotcheckApiConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApiConstants.h; sourceTree = "<group>"; };
 		C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotcheckApiConstants.m; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 		C95D331A1CB9DC2D0056840D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C9337C8F1CB678BE00572BF3 /* ServiceSpotcheckApi.h */,
-				C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */,
+				C9337C8F1CB678BE00572BF3 /* ServiceAccountApi.h */,
+				C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -165,8 +165,8 @@
 		C95D331B1CB9DC470056840D /* Query */ = {
 			isa = PBXGroup;
 			children = (
-				C9337C8D1CB678BE00572BF3 /* QuerySpotcheckApi.h */,
-				C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */,
+				C9337C8D1CB678BE00572BF3 /* QueryAccountApi.h */,
+				C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */,
 			);
 			name = Query;
 			sourceTree = "<group>";
@@ -360,6 +360,7 @@
 				TargetAttributes = {
 					CA68D0781BF4910E00D5C130 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3D6HBK84RK;
 					};
 				};
 			};
@@ -401,7 +402,7 @@
 			files = (
 				CA68D0D71BF4914E00D5C130 /* GTMReadMonitorInputStream.m in Sources */,
 				CA68D0E21BF4914E00D5C130 /* GTLRuntimeCommon.m in Sources */,
-				C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */,
+				C9337C961CB678BE00572BF3 /* QueryAccountApi.m in Sources */,
 				C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */,
 				CA68D0D01BF4914E00D5C130 /* GTMHTTPFetcher.m in Sources */,
 				C9337C941CB678BE00572BF3 /* Account.m in Sources */,
@@ -423,7 +424,7 @@
 				CA68D0CF1BF4914E00D5C130 /* GTMGatherInputStream.m in Sources */,
 				CA68D0D91BF4914E00D5C130 /* GTMOAuth2SignIn.m in Sources */,
 				CA68D0D51BF4914E00D5C130 /* GTMHTTPUploadFetcher.m in Sources */,
-				C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */,
+				C9337C971CB678BE00572BF3 /* ServiceAccountApi.m in Sources */,
 				CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */,
 				CA68D0D11BF4914E00D5C130 /* GTMHTTPFetcherLogging.m in Sources */,
 				CA68D0D31BF4914E00D5C130 /* GTMHTTPFetcherService.m in Sources */,
@@ -535,11 +536,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spotcheck-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spotcheck.Spotcheck-iOS";
 				PRODUCT_NAME = "Spotcheck-iOS.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotcheck-iOS/Spotcheck-iOS-Bridging-Header.h";
 			};
 			name = Debug;
@@ -548,11 +552,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spotcheck-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spotcheck.Spotcheck-iOS";
 				PRODUCT_NAME = "Spotcheck-iOS.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotcheck-iOS/Spotcheck-iOS-Bridging-Header.h";
 			};
 			name = Release;

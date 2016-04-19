@@ -9,13 +9,12 @@ public class AccountForm
     private String lastName;
     private String email;
     private String password;
+    private long userId = 0;
 
     private AccountForm () {}
 
     /**
      * Constructor for AccountForm, solely for unit test.
-     * @param firstName A String for displaying the user on this system.
-     * @param notificationEmail An e-mail address for getting notifications from this system.
      */
     public AccountForm(String firstName, String lastName, String email, String password)
     {
@@ -24,6 +23,10 @@ public class AccountForm
         this.email = email;
         this.password = password;
     }
+
+    public void setUserId(long userId) { this.userId = userId; }
+
+    public long getUserId() { return userId; }
 
     public String getFirstName() { return firstName; }
 
