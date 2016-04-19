@@ -1,11 +1,18 @@
-# Spotcheck 
+#Spotcheck 
 Project contains iOS, Android, and Java Backend API for Spotcheck.
 
-#Installation
-Android
-- Start Android Studio > Open Existing Project > select "Spotcheck-Android-master"
+#Project Setup
+Android (For Mac or Windows with Android Studio IDE installed)
+- Open the Android Studio IDE
+- Choose the option "Open Existing Project"
+- Select the folder "Spotcheck-Android-master"
 
-IOS
-- "Spotcheck-iOS-master" > double click "Spotcheck-iOS.xcodeproj"
+IOS (For Mac with XCode IDE installed)
+- Navigate to the folder "Spotcheck-iOS-master" 
+- Double click on the file "Spotcheck-iOS.xcodeproj" to launch the XCode IDE
+
+#Running the project
+- In XCode or Android Studio, click the play icon to build and run the project.
+
 
 
