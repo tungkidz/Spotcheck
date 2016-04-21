@@ -7,7 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
 import com.spotcheck.R;
+import com.spotcheck.api.spotApi.model.Spot;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -23,7 +33,11 @@ public class NewSpotFragment extends Fragment
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     protected static final String ARG_PARAM1 = "param1";
+    private Spinner spinner;
+    private static final String[]categories = {"Eat & Drink", "Education", "Entertainment", "Shopping"};
+    private Spot spot = new Spot();
 
+    private Button submitButton;
     // TODO: Rename and change types of parameters
     private String mParam1;
 
@@ -53,9 +67,76 @@ public class NewSpotFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
+
+        spinner = (Spinner) getView().findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, categories);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+        submitButton = (Button) getView().findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+//                try {
+//                    getInput();
+//                    spotApi.insertSpot(spot);
+//                } catch (ConflictException e) {
+//                    e.printStackTrace();
+//                }
+            }
+        });
+    }
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
+        switch (position) {
+            case 0:
+                String type1 = Arrays.asList(categories).get(0);
+                spot.setType(type1);
+                break;
+            case 1:
+                String type2 = Arrays.asList(categories).get(1);
+                spot.setType(type2);
+                break;
+            case 2:
+                String type3 = Arrays.asList(categories).get(2);
+                spot.setType(type3);
+                break;
+            case 3:
+                String type4 = Arrays.asList(categories).get(3);
+                spot.setType(type4);
+                break;
+        }
+    }
+
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+///      Toast.makeText(MainActivity.this, "Hahaha", Toast.LENGTH_SHORT).show();
+//    }
+
+    public void getInput(){
+
+        EditText name = (EditText) getView().findViewById(R.id.spotNameInput);
+        String spotName = name.getText().toString();
+        spot.setName(spotName);
+
+        EditText city = (EditText) getView().findViewById(R.id.cityInput);
+        String cityName = city.getText().toString();
+        spot.setCity(cityName);
+
+        EditText state = (EditText) getView().findViewById(R.id.stateInput);
+        String stateName = state.getText().toString();
+        spot.setState(stateName);
+
+        EditText tags = (EditText) getView().findViewById(R.id.tags);
+        String spotTags = tags.getText().toString();
+        String[] separatedTags = spotTags.split(", ");
+        ArrayList<String> allTags = new ArrayList<>();
+        allTags.addAll(Arrays.asList(separatedTags));
+        spot.setTags(allTags);
     }
 
     @Override
@@ -97,4 +178,6 @@ public class NewSpotFragment extends Fragment
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

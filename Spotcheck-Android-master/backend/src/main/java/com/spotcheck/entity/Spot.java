@@ -6,7 +6,7 @@ import com.googlecode.objectify.annotation.Id;
 import java.util.ArrayList;
 
 /**
- * Created by Tung on 4/12/2016.
+ * Created by Tung on 4/21/2016.
  */
 
 @Entity
@@ -16,14 +16,18 @@ public class Spot {
     String name;
     String address;
     String type;
+    String city;
+    String state;
     ArrayList<String> tags;
 
-    private Spot(){}
+    public Spot(){}
 
-    public Spot(Long id, String name, String address, String type, ArrayList<String> tag){
+    public Spot(Long id, String name, String type, String city, String state, ArrayList<String> tag){
         this.id = id;
         this.name = name;
-        this.address = address;
+//        this.address = address;
+        this.city = city;
+        this.state = state;
         this.type = type;
         this.tags = tag;
     }
@@ -39,6 +43,12 @@ public class Spot {
 
     public String getType(){return type;}
     public void setType(String _type){this.type = _type;}
+
+    public String getCity(){return city;}
+    public void setCity(String _city){this.city = _city;}
+
+    public String getState(){return state;}
+    public void setState(String _state){this.state = _state;}
 
     public ArrayList<String> getTags(){return tags;}
     public void setTags(ArrayList<String> _tags){this.tags = _tags;}
