@@ -1,12 +1,10 @@
 package com.spotcheck.service;
 
-import com.spotcheck.entity.Account;
-
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
-import com.spotcheck.entity.Profile;
-import com.spotcheck.entity.User;
+import com.spotcheck.entity.Account;
+import com.spotcheck.entity.Spot;
 
 /**
  * Custom Objectify Service that this application should use.
@@ -19,6 +17,7 @@ public class OfyService
     static
     {
         factory().register(Account.class);
+        factory().register(Spot.class);
         //factory().register(User.class);
         //factory().register(Profile.class);
     }
