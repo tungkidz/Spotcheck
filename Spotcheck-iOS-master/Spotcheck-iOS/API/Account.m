@@ -19,13 +19,11 @@
 //
 
 @implementation Account
-@dynamic accountId;
+@dynamic userId;
 @dynamic firstName;
 @dynamic lastName;
 @dynamic email;
 @dynamic password;
-@dynamic salt;
-@dynamic active;
 
 @dynamic etag;
 @dynamic kind;

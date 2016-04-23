@@ -21,19 +21,26 @@
 
 // This interface is a GTLQuery object
 // see the GTL folder for more details
-@interface QueryAccountApi : GTLQuery
+@interface QuerySpotcheckApi : GTLQuery
 
 
 // Method-specific parameters; see the comments below for more information.
+//
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 
 // @property (nonatomic, copy) AccountForm *accountForm;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *password;
 
 #pragma mark - Service level methods
+// These create a GTLQuerySuggestionBeanApi object.
 
+// Method: suggestionBeanApi.getAnswer
+//  Authorization scope(s):
+//   kGTLAuthScopeSuggestionBeanApiUserinfoEmail
+// Fetches an Account.
 + (instancetype)createAccount:(AccountForm *)accountForm;
-+ (instancetype)authenticateAccount: (NSString *)email :(NSString *)password;
++ (instancetype)authenticateAccount:(NSString *)email:(NSString *)password;
 
 
 

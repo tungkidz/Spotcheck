@@ -14,14 +14,14 @@
 
 #import "SpotcheckApi.h"
 
-@implementation ServiceAccountApi
+@implementation ServiceSpotcheckApi
 
 #if DEBUG
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
     NSArray *classes = @[
-                         [QueryAccountApi class],
+                         [QuerySpotcheckApi class],
                          [Account class]
                          ];
     return classes;

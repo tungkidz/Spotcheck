@@ -18,7 +18,7 @@
 #import "GTLService.h"
 #endif
 
-@interface ServiceAccountApi : GTLService
+@interface ServiceSpotcheckApi : GTLService
 
 // No new methods
 

@@ -12,12 +12,12 @@
 // Classes:
 //   QuerySpotcheckApi (3 custom class methods, 3 custom properties)
 
-#import "QueryAccountApi.h"
+#import "QuerySpotcheckApi.h"
 
 #import "Account.h"
 #import "AccountForm.h"
 
-@implementation QueryAccountApi
+@implementation QuerySpotcheckApi
 
 @dynamic email;
 @dynamic password;
@@ -28,16 +28,16 @@
 + (instancetype)createAccount:(AccountForm *)accountForm
 {
     NSString *methodName = @"accountApi.createAccount";
-    QueryAccountApi *query = [self queryWithMethodName:methodName];
+    QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.bodyObject = accountForm;
     query.expectedObjectClass = [Account class];
     return query;
 }
 
-+ (instancetype)authenticateAccount:(NSString *)email :(NSString *)password
++ (instancetype)authenticateAccount:(NSString *)email: (NSString *)password
 {
     NSString *methodName = @"accountApi.authenticateAccount";
-    QueryAccountApi *query = [self queryWithMethodName:methodName];
+    QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.email = email;
     query.password = password;
     query.expectedObjectClass = [Account class];

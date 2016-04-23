@@ -13,5 +13,5 @@
 
 #import "Account.h"
 
-#import "QueryAccountApi.h"
-#import "ServiceAccountApi.h"
+#import "QuerySpotcheckApi.h"
+#import "ServiceSpotcheckApi.h"

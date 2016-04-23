@@ -3,7 +3,7 @@
 //
 
 //  import the classes used the ViewControler.swift file
-#import "ServiceAccountApi.h"
-#import "QueryAccountApi.h"
+#import "ServiceSpotcheckApi.h"
+#import "QuerySpotcheckApi.h"
 #import "AccountForm.h"
 #import "Account.h"

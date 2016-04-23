@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A92F3AE1CC97CB2001C3A4D /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A92F3AD1CC97CB2001C3A4D /* loginViewController.swift */; };
+		1A92F3B01CCAC080001C3A4D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A92F3AF1CCAC080001C3A4D /* RegisterViewController.swift */; };
+		1A92F3B31CCAE808001C3A4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A92F3B11CCAE808001C3A4D /* Main.storyboard */; };
 		C9337C941CB678BE00572BF3 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8A1CB678BE00572BF3 /* Account.m */; };
 		C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8C1CB678BE00572BF3 /* AccountForm.m */; };
-		C9337C961CB678BE00572BF3 /* QueryAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */; };
-		C9337C971CB678BE00572BF3 /* ServiceAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */; };
+		C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */; };
+		C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */; };
 		C9337C981CB678BE00572BF3 /* SpotcheckApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */; };
 		CA68D07D1BF4910E00D5C130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */; };
 		CA68D07F1BF4910E00D5C130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07E1BF4910E00D5C130 /* ViewController.swift */; };
-		CA68D0821BF4910E00D5C130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA68D0801BF4910E00D5C130 /* Main.storyboard */; };
 		CA68D0841BF4910E00D5C130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA68D0831BF4910E00D5C130 /* Assets.xcassets */; };
 		CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68D0911BF4914E00D5C130 /* GTMSessionFetcher.m */; };
 		CA68D0CE1BF4914E00D5C130 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68D0931BF4914E00D5C130 /* GTMSessionFetcherService.m */; };
@@ -47,21 +49,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A92F3AD1CC97CB2001C3A4D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		1A92F3AF1CCAC080001C3A4D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1A92F3B21CCAE808001C3A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9337C891CB678BE00572BF3 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		C9337C8A1CB678BE00572BF3 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C9337C8B1CB678BE00572BF3 /* AccountForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountForm.h; sourceTree = "<group>"; };
 		C9337C8C1CB678BE00572BF3 /* AccountForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountForm.m; sourceTree = "<group>"; };
-		C9337C8D1CB678BE00572BF3 /* QueryAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryAccountApi.h; sourceTree = "<group>"; };
-		C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryAccountApi.m; sourceTree = "<group>"; };
-		C9337C8F1CB678BE00572BF3 /* ServiceAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAccountApi.h; sourceTree = "<group>"; };
-		C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAccountApi.m; sourceTree = "<group>"; };
+		C9337C8D1CB678BE00572BF3 /* QuerySpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySpotcheckApi.h; sourceTree = "<group>"; };
+		C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuerySpotcheckApi.m; sourceTree = "<group>"; };
+		C9337C8F1CB678BE00572BF3 /* ServiceSpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceSpotcheckApi.h; sourceTree = "<group>"; };
+		C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceSpotcheckApi.m; sourceTree = "<group>"; };
 		C9337C911CB678BE00572BF3 /* SpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApi.h; sourceTree = "<group>"; };
 		C9337C921CB678BE00572BF3 /* SpotcheckApiConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApiConstants.h; sourceTree = "<group>"; };
 		C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotcheckApiConstants.m; sourceTree = "<group>"; };
 		CA68D0791BF4910E00D5C130 /* Spotcheck-iOS.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotcheck-iOS.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA68D07E1BF4910E00D5C130 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA68D0811BF4910E00D5C130 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA68D0831BF4910E00D5C130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA68D0881BF4910E00D5C130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA68D08F1BF4914E00D5C130 /* GTLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
@@ -156,8 +160,8 @@
 		C95D331A1CB9DC2D0056840D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C9337C8F1CB678BE00572BF3 /* ServiceAccountApi.h */,
-				C9337C901CB678BE00572BF3 /* ServiceAccountApi.m */,
+				C9337C8F1CB678BE00572BF3 /* ServiceSpotcheckApi.h */,
+				C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -165,8 +169,8 @@
 		C95D331B1CB9DC470056840D /* Query */ = {
 			isa = PBXGroup;
 			children = (
-				C9337C8D1CB678BE00572BF3 /* QueryAccountApi.h */,
-				C9337C8E1CB678BE00572BF3 /* QueryAccountApi.m */,
+				C9337C8D1CB678BE00572BF3 /* QuerySpotcheckApi.h */,
+				C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */,
 			);
 			name = Query;
 			sourceTree = "<group>";
@@ -203,8 +207,10 @@
 				CA68D08E1BF4914E00D5C130 /* GTL */,
 				CA68D0E91BF491BF00D5C130 /* API */,
 				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
+				1A92F3AF1CCAC080001C3A4D /* RegisterViewController.swift */,
 				CA68D07E1BF4910E00D5C130 /* ViewController.swift */,
-				CA68D0801BF4910E00D5C130 /* Main.storyboard */,
+				1A92F3AD1CC97CB2001C3A4D /* loginViewController.swift */,
+				1A92F3B11CCAE808001C3A4D /* Main.storyboard */,
 				CA68D0831BF4910E00D5C130 /* Assets.xcassets */,
 				CA68D0881BF4910E00D5C130 /* Info.plist */,
 			);
@@ -360,7 +366,6 @@
 				TargetAttributes = {
 					CA68D0781BF4910E00D5C130 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 3D6HBK84RK;
 					};
 				};
 			};
@@ -387,9 +392,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A92F3B31CCAE808001C3A4D /* Main.storyboard in Resources */,
 				CA68D0DB1BF4914E00D5C130 /* GTMOAuth2ViewTouch.xib in Resources */,
 				CA68D0841BF4910E00D5C130 /* Assets.xcassets in Resources */,
-				CA68D0821BF4910E00D5C130 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,12 +407,13 @@
 			files = (
 				CA68D0D71BF4914E00D5C130 /* GTMReadMonitorInputStream.m in Sources */,
 				CA68D0E21BF4914E00D5C130 /* GTLRuntimeCommon.m in Sources */,
-				C9337C961CB678BE00572BF3 /* QueryAccountApi.m in Sources */,
+				C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */,
 				C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */,
 				CA68D0D01BF4914E00D5C130 /* GTMHTTPFetcher.m in Sources */,
 				C9337C941CB678BE00572BF3 /* Account.m in Sources */,
 				CA68D0E11BF4914E00D5C130 /* GTLQuery.m in Sources */,
 				CA68D0E01BF4914E00D5C130 /* GTLObject.m in Sources */,
+				1A92F3AE1CC97CB2001C3A4D /* loginViewController.swift in Sources */,
 				CA68D07F1BF4910E00D5C130 /* ViewController.swift in Sources */,
 				CA68D0E51BF4914E00D5C130 /* GTLBase64.m in Sources */,
 				CA68D0D41BF4914E00D5C130 /* GTMHTTPFetchHistory.m in Sources */,
@@ -424,8 +430,9 @@
 				CA68D0CF1BF4914E00D5C130 /* GTMGatherInputStream.m in Sources */,
 				CA68D0D91BF4914E00D5C130 /* GTMOAuth2SignIn.m in Sources */,
 				CA68D0D51BF4914E00D5C130 /* GTMHTTPUploadFetcher.m in Sources */,
-				C9337C971CB678BE00572BF3 /* ServiceAccountApi.m in Sources */,
+				C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */,
 				CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */,
+				1A92F3B01CCAC080001C3A4D /* RegisterViewController.swift in Sources */,
 				CA68D0D11BF4914E00D5C130 /* GTMHTTPFetcherLogging.m in Sources */,
 				CA68D0D31BF4914E00D5C130 /* GTMHTTPFetcherService.m in Sources */,
 				CA68D0D81BF4914E00D5C130 /* GTMOAuth2Authentication.m in Sources */,
@@ -440,10 +447,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA68D0801BF4910E00D5C130 /* Main.storyboard */ = {
+		1A92F3B11CCAE808001C3A4D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA68D0811BF4910E00D5C130 /* Base */,
+				1A92F3B21CCAE808001C3A4D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -536,14 +543,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spotcheck-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spotcheck.Spotcheck-iOS";
 				PRODUCT_NAME = "Spotcheck-iOS.temp_caseinsensitive_rename";
-				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotcheck-iOS/Spotcheck-iOS-Bridging-Header.h";
 			};
 			name = Debug;
@@ -552,14 +556,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Spotcheck-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spotcheck.Spotcheck-iOS";
 				PRODUCT_NAME = "Spotcheck-iOS.temp_caseinsensitive_rename";
-				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotcheck-iOS/Spotcheck-iOS-Bridging-Header.h";
 			};
 			name = Release;
