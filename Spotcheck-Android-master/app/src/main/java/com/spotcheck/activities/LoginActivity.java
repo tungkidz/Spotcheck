@@ -170,6 +170,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
+        // For Testing purpose login quickly with email = "$"
+        if (email.contains("$"))
+        {
+            email = "fake@email.com";
+            password = "password";
+        }
+
         boolean cancel = false;
         View focusView = null;
 

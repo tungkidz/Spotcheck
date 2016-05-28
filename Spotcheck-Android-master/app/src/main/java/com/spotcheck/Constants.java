@@ -6,6 +6,6 @@ package com.spotcheck;
 public class Constants
 {
     public final static String LOCALHOST = "10.0.2.2:8080";
-    public final static String APPSPOT = "spotcheck-3210.appspot.com";
+    public final static String APPSPOT = "spotcheck-it.appspot.com";
 
 }
