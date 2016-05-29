@@ -66,8 +66,8 @@ class RegisterViewController: UIViewController
             { (ticket: GTLServiceTicket!, object: AnyObject!, error: NSError!) -> Void in
                 
                 // Get response from Api service
-                let resp = object as! Account
-                print("Account:\nf= \(resp.firstName)\nl= \(resp.lastName)\ne= \(resp.email)\np= \(resp.password)", terminator: "\n")
+                //let resp = object as! User
+                //print("User id:\nf= \(resp.userId)", terminator: "\n")
                 
                 // TODO: Store authentication token locally
                 

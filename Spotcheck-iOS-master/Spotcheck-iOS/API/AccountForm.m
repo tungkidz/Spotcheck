@@ -19,6 +19,7 @@
 //
 
 @implementation AccountForm
+@dynamic accountId;
 @dynamic firstName;
 @dynamic lastName;
 @dynamic email;

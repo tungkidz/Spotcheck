@@ -14,7 +14,7 @@
 
 #import "QuerySpotcheckApi.h"
 
-#import "Account.h"
+#import "User.h"
 #import "AccountForm.h"
 
 @implementation QuerySpotcheckApi
@@ -27,20 +27,20 @@
 
 + (instancetype)createAccount:(AccountForm *)accountForm
 {
-    NSString *methodName = @"accountApi.createAccount";
+    NSString *methodName = @"userApi.createAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.bodyObject = accountForm;
-    query.expectedObjectClass = [Account class];
+    query.expectedObjectClass = [User class];
     return query;
 }
 
 + (instancetype)authenticateAccount:(NSString *)email: (NSString *)password
 {
-    NSString *methodName = @"accountApi.authenticateAccount";
+    NSString *methodName = @"userApi.authenticateAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.email = email;
     query.password = password;
-    query.expectedObjectClass = [Account class];
+    query.expectedObjectClass = [User class];
     return query;
 }
 

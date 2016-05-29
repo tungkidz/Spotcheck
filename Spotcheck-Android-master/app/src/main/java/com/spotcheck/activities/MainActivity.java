@@ -83,6 +83,10 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		navView.setNavigationItemSelectedListener(this);
+
+		// Why display email and name in navbar??????
+
+		/*
 		View header = navView.getHeaderView(0);
 		Intent intent = getIntent();
 		String[] credentials = intent.getStringExtra(LoginActivity.CREDENTIALS_MESSAGE).split(":");
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity
 		TextView userName = (TextView) header.findViewById(R.id.user_name);
 		userEmail.setText(credentials[0]);
 		userName.setText(credentials[1]);
+		*/
 
 	}
 

@@ -64,9 +64,12 @@ class LoginViewController: UIViewController
             { (ticket: GTLServiceTicket!, object: AnyObject!, error: NSError!) -> Void in
                 
                 // Get response from Api service
-                let resp = object as! Account
-                if (resp.firstName != nil)
+                let resp = object as! User
+                if (resp.userId != nil)
                 {
+                    
+                    // TODO: Store authentication token locally
+                    
                     // Transition into application as an authenticated user
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                 } else

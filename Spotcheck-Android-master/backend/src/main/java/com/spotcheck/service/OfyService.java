@@ -4,7 +4,9 @@ import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
 import com.spotcheck.entity.Account;
+import com.spotcheck.entity.Profile;
 import com.spotcheck.entity.Spot;
+import com.spotcheck.entity.User;
 
 /**
  * Custom Objectify Service that this application should use.
@@ -18,8 +20,8 @@ public class OfyService
     {
         factory().register(Account.class);
         factory().register(Spot.class);
-        //factory().register(User.class);
-        //factory().register(Profile.class);
+        factory().register(User.class);
+        factory().register(Profile.class);
     }
 
     /**

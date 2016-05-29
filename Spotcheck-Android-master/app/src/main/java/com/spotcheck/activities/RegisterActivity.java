@@ -1,8 +1,8 @@
 package com.spotcheck.activities;
 
 import com.spotcheck.R;
-import com.spotcheck.api.accountApi.model.Account;
-import com.spotcheck.api.accountApi.model.AccountForm;
+import com.spotcheck.api.userApi.model.AccountForm;
+import com.spotcheck.api.userApi.model.User;
 import com.spotcheck.tasks.AccountAsyncTask;
 
 import android.animation.Animator;
@@ -63,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     private EditText mLastNameView;
     private View mProgressView;
     private View mLoginFormView;
+    Intent launchMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,9 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             mPasswordView.setText(emailPassword[1]);
         }
         catch(ArrayIndexOutOfBoundsException e) {/*do nothing*/}
+
+
+        launchMainActivity = new Intent(this, MainActivity.class);
     }
 
     private void populateAutoComplete() {
@@ -360,8 +364,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
      */
     public class RegisterTask extends AccountAsyncTask
     {
-        //private User user;
-        private Account account;
+        private User user;
         private AccountForm accountForm;
 
         public RegisterTask(String firstName, String lastName, String email, String password)
@@ -377,7 +380,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         @Override
         protected Boolean doInBackground(Void... params)
         {
-            if (accountAPI == null)
+            if (userApi == null)
             {
                 super.initializeAPI();
             }
@@ -385,8 +388,8 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             try
             {
                 // Create and return the user of the saved account
-                account = accountAPI.createAccount(accountForm).execute();
-                if (account == null)
+                user = userApi.createAccount(accountForm).execute();
+                if (user == null)
                 {
                     error = "Sorry, the account cannot be created. Please try again.";
                     return false;
@@ -396,8 +399,6 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
                 error = "Please check your internet connection and try again.";
                 return false;
             }
-
-            //System.out.println("\n\nAccount returned: f=" + account.getFirstName());
             return true;
         }
 
@@ -409,15 +410,10 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
 
             if (success)
             {
-                try
-                {
-                    mEmailView.setError(account.toPrettyString());
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-                mEmailView.requestFocus();
-                //finish(); TODO: remove comment
+                // TODO: store user object for authorization to backend
+
+                startActivity(launchMainActivity);
+                finish();
             }
             else
             {

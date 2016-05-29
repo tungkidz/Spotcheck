@@ -19,7 +19,7 @@
 		C924927D1CF9632500402E99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92492781CF9632500402E99 /* MainViewController.swift */; };
 		C924927E1CF9632500402E99 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92492791CF9632500402E99 /* MenuTableViewController.swift */; };
 		C924927F1CF9632500402E99 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924927A1CF9632500402E99 /* RegisterViewController.swift */; };
-		C9337C941CB678BE00572BF3 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8A1CB678BE00572BF3 /* Account.m */; };
+		C9337C941CB678BE00572BF3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8A1CB678BE00572BF3 /* User.m */; };
 		C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8C1CB678BE00572BF3 /* AccountForm.m */; };
 		C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */; };
 		C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */; };
@@ -71,8 +71,8 @@
 		C92492781CF9632500402E99 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		C92492791CF9632500402E99 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = ViewControllers/MenuTableViewController.swift; sourceTree = "<group>"; };
 		C924927A1CF9632500402E99 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewControllers/RegisterViewController.swift; sourceTree = "<group>"; };
-		C9337C891CB678BE00572BF3 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		C9337C8A1CB678BE00572BF3 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		C9337C891CB678BE00572BF3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C9337C8A1CB678BE00572BF3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C9337C8B1CB678BE00572BF3 /* AccountForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountForm.h; sourceTree = "<group>"; };
 		C9337C8C1CB678BE00572BF3 /* AccountForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountForm.m; sourceTree = "<group>"; };
 		C9337C8D1CB678BE00572BF3 /* QuerySpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuerySpotcheckApi.h; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 		C95D33181CB9DB4F0056840D /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				C9337C891CB678BE00572BF3 /* Account.h */,
-				C9337C8A1CB678BE00572BF3 /* Account.m */,
+				C9337C891CB678BE00572BF3 /* User.h */,
+				C9337C8A1CB678BE00572BF3 /* User.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -250,13 +250,13 @@
 		CA68D07B1BF4910E00D5C130 /* Spotcheck-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CA68D0F71BF491EB00D5C130 /* Spotcheck-iOS-Bridging-Header.h */,
 				CA68D08E1BF4914E00D5C130 /* GTL */,
 				CA68D0E91BF491BF00D5C130 /* API */,
-				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
 				C90726961CF8F04600A49B85 /* icons */,
 				C90726971CF9068300A49B85 /* ViewControllers */,
+				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
 				C9E6CC341CF41A11001FCDDF /* MenuItem.swift */,
+				CA68D0F71BF491EB00D5C130 /* Spotcheck-iOS-Bridging-Header.h */,
 				1A92F3B11CCAE808001C3A4D /* Main.storyboard */,
 				CA68D0831BF4910E00D5C130 /* Assets.xcassets */,
 				CA68D0881BF4910E00D5C130 /* Info.plist */,
@@ -469,7 +469,7 @@
 				C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */,
 				C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */,
 				CA68D0D01BF4914E00D5C130 /* GTMHTTPFetcher.m in Sources */,
-				C9337C941CB678BE00572BF3 /* Account.m in Sources */,
+				C9337C941CB678BE00572BF3 /* User.m in Sources */,
 				CA68D0E11BF4914E00D5C130 /* GTLQuery.m in Sources */,
 				C924927C1CF9632500402E99 /* LoginViewController.swift in Sources */,
 				CA68D0E01BF4914E00D5C130 /* GTLObject.m in Sources */,

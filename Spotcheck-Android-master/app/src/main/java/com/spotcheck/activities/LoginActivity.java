@@ -29,8 +29,8 @@ import android.widget.TextView;
 import android.content.Intent;
 
 import com.spotcheck.R;
-import com.spotcheck.api.accountApi.model.Account;
-import com.spotcheck.api.accountApi.model.AccountForm;
+import com.spotcheck.api.userApi.model.AccountForm;
+import com.spotcheck.api.userApi.model.User;
 import com.spotcheck.tasks.AccountAsyncTask;
 
 import java.io.IOException;
@@ -322,8 +322,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     public class LoginTask extends AccountAsyncTask
     {
-            //private User user;
-            private Account account;
+            private User user;
             private AccountForm accountForm;
 
             public LoginTask(String email, String password)
@@ -338,7 +337,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             protected Boolean doInBackground(Void... params)
             {
                 // set up the API if not set
-                if (accountAPI == null)
+                if (userApi == null)
                 {
                     super.initializeAPI();
                 }
@@ -347,8 +346,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 {   // Authenticate account in server.
                     String email = accountForm.getEmail();
                     String password = accountForm.getPassword();
-                    account = accountAPI.authenticateAccount(email, password).execute();
-                    if (account != null)
+                    user = userApi.authenticateAccount(email, password).execute();
+                    if (user != null)
                     {
                         return true;
                     }
@@ -367,9 +366,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 if (success)
                 {
-	                String email = account.getEmail();
-	                String firstLastName = account.getFirstName() + " " + account.getLastName();
-	                launchMainActivity.putExtra(CREDENTIALS_MESSAGE, email + ":" + firstLastName);
+                    // TODO:  store user object for authorization to backend
+
 	                startActivity(launchMainActivity);
 	                finish();
                 }

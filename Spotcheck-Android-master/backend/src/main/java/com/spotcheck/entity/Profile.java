@@ -9,6 +9,10 @@ import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Profile
 {
-    @Id long profileId;
-    long userId;
+    @Id Long profileId;
+
+    public Profile() {}
+
+    public Long getProfileId() { return profileId; }
+
 }

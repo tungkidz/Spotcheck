@@ -23,6 +23,7 @@
 //
 
 @interface AccountForm : GTLObject
+@property (nonatomic, copy) NSString *accountId;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *email;

@@ -9,7 +9,7 @@ public class AccountForm
     private String lastName;
     private String email;
     private String password;
-    private long userId = 0;
+    private Long accountId;
 
     private AccountForm () {}
 
@@ -24,9 +24,10 @@ public class AccountForm
         this.password = password;
     }
 
-    public void setUserId(long userId) { this.userId = userId; }
 
-    public long getUserId() { return userId; }
+    public void setAccountId(Long accountId) { this.accountId = accountId; }
+
+    public Long getAccountId() { return accountId; }
 
     public String getFirstName() { return firstName; }
 

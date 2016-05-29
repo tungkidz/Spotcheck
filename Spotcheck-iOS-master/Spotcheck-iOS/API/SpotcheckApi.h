@@ -11,7 +11,7 @@
 
 #import "SpotcheckApiConstants.h"
 
-#import "Account.h"
+#import "User.h"
 
 #import "QuerySpotcheckApi.h"
 #import "ServiceSpotcheckApi.h"

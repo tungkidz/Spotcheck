@@ -2,6 +2,7 @@ package com.spotcheck.entity;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 /**
  * Created by Matt on 4/16/16.
@@ -9,22 +10,21 @@ import com.googlecode.objectify.annotation.Id;
 @Entity
 public class User
 {
-    @Id long userId;
-    long accountId;
+    @Id Long userId;
+    @Index Long accountId;
+    @Index Long profileId;
 
     private User(){}
 
-    public User(long accountId)
+    public User(Long accountId, Long profileId)
     {
         this.accountId = accountId;
+        this.profileId = profileId;
     }
 
-    public void setAccountId(long accountId)
-    {
-        this.accountId = accountId;
-    }
+    public Long getUserId() { return userId; }
 
-    public long getUserId() { return userId; }
+    public Long getAccountId() { return accountId; }
 
-    public long getAccountId() { return accountId; }
+    public Long getProfileId() { return profileId; }
 }
