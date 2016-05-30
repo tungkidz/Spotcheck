@@ -206,7 +206,7 @@
         <!--Profile-->
         <scene sceneID="3tA-Vp-EAP">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" title="Profile" id="CHg-XJ-NWj" customClass="MainViewController" customModule="Spotcheck_iOS_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" title="Profile" id="CHg-XJ-NWj" customClass="ProfileViewController" customModule="Spotcheck_iOS_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BZj-xe-ncz"/>
                         <viewControllerLayoutGuide type="bottom" id="dk9-bc-xTD"/>

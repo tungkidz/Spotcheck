@@ -28,6 +28,12 @@ class ContainerViewController: UIViewController
     {
         super.viewDidLoad()
         initialize()
+        
+        if Data.model.user.userId == nil
+        {
+            displayError()
+            logOut()
+        }
     }
     
     /**
@@ -45,6 +51,23 @@ class ContainerViewController: UIViewController
         // Set main view to reckognize tough gestures to pull out the menu
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ContainerViewController.handlePanGesture(_:)))
         mainViewController.view.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    func displayError()
+    {
+        let alertView = UIAlertController(title: "User Authentication Problem",
+                                          message: "Cannot authenticate user credentials, Please log in again." as String, preferredStyle:.Alert)
+        let okAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+        alertView.addAction(okAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    func logOut()
+    {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasAutoLoginKey")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        Data.model.user = User()
+        performSegueWithIdentifier("logoutSeque", sender: self)
     }
     
 }
@@ -148,7 +171,7 @@ extension ContainerViewController: MenuTableViewControllerDelegate
         // Check if log out was selected
         if (menuSelection.containsString("Log out"))
         {
-            performSegueWithIdentifier("logoutSeque", sender: self)
+            logOut()
             return
         }
         

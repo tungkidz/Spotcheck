@@ -2,6 +2,9 @@ import UIKit
 
 class RegisterViewController: UIViewController
 {
+    
+    let MyKeychainWrapper = KeychainWrapper()
+    
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var lastNameField: UITextField!
@@ -48,7 +51,8 @@ class RegisterViewController: UIViewController
         // Validate Form
         if !formIsValid(accountForm)
         {
-            // TODO: Display error message
+            // Display error message
+            displayError()
             return
         }
         
@@ -66,17 +70,46 @@ class RegisterViewController: UIViewController
             { (ticket: GTLServiceTicket!, object: AnyObject!, error: NSError!) -> Void in
                 
                 // Get response from Api service
-                //let resp = object as! User
-                //print("User id:\nf= \(resp.userId)", terminator: "\n")
+                let resp = object as! User
+                if (resp.userId == nil)
+                {
+                    // Display sign up error
+                    self.displayError()
+                    return
+                }
                 
-                // TODO: Store authentication token locally
+                // Set user in data model
+                Data.model.user = resp
+                
+                // Store authentication locally in keychain
+                let hasAutoLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("hasAutoLoginKey")
+                if hasAutoLoginKey == false
+                {
+                    NSUserDefaults.standardUserDefaults().setValue(accountForm.email, forKey: "email")
+                    self.MyKeychainWrapper.mySetObject(accountForm.password, forKey:kSecValueData)
+                    self.MyKeychainWrapper.writeToKeychain()
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasAutoLoginKey")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                }
                 
                 // Transition into application as an authenticated user
                 self.performSegueWithIdentifier("registerSegue", sender: self)
             })
     }
+    
+    
+    func displayError()
+    {
+        let alertView = UIAlertController(title: "Register Problem",
+                                          message: "Invalid email or password." as String, preferredStyle:.Alert)
+        let okAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+        alertView.addAction(okAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
+    }
 
 }
+
 
 
 // MARK: UITextField delegate

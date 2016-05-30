@@ -26,6 +26,9 @@
 		C9337C981CB678BE00572BF3 /* SpotcheckApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */; };
 		C9C1327F1CF959DC0046E010 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C1327E1CF959DC0046E010 /* MapKit.framework */; };
 		C9E6CC351CF41A11001FCDDF /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E6CC341CF41A11001FCDDF /* MenuItem.swift */; };
+		C9F8181F1CFCE2410020F0CB /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8181E1CFCE2410020F0CB /* KeychainWrapper.m */; };
+		C9F818221CFCFD5B0020F0CB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F818211CFCFD5B0020F0CB /* Data.swift */; };
+		C9F818241CFD06F00020F0CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F818231CFD06F00020F0CB /* ProfileViewController.swift */; };
 		CA68D07D1BF4910E00D5C130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */; };
 		CA68D0841BF4910E00D5C130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA68D0831BF4910E00D5C130 /* Assets.xcassets */; };
 		CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68D0911BF4914E00D5C130 /* GTMSessionFetcher.m */; };
@@ -84,6 +87,10 @@
 		C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotcheckApiConstants.m; sourceTree = "<group>"; };
 		C9C1327E1CF959DC0046E010 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9E6CC341CF41A11001FCDDF /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		C9F8181D1CFCE2410020F0CB /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = Keychain/KeychainWrapper.h; sourceTree = "<group>"; };
+		C9F8181E1CFCE2410020F0CB /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = Keychain/KeychainWrapper.m; sourceTree = "<group>"; };
+		C9F818211CFCFD5B0020F0CB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C9F818231CFD06F00020F0CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
 		CA68D0791BF4910E00D5C130 /* Spotcheck-iOS.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotcheck-iOS.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA68D0831BF4910E00D5C130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +188,7 @@
 				C92492781CF9632500402E99 /* MainViewController.swift */,
 				C92492791CF9632500402E99 /* MenuTableViewController.swift */,
 				C924927A1CF9632500402E99 /* RegisterViewController.swift */,
+				C9F818231CFD06F00020F0CB /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +238,15 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		C9F818201CFCE2490020F0CB /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				C9F8181D1CFCE2410020F0CB /* KeychainWrapper.h */,
+				C9F8181E1CFCE2410020F0CB /* KeychainWrapper.m */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		CA68D0701BF4910E00D5C130 = {
 			isa = PBXGroup;
 			children = (
@@ -253,9 +270,11 @@
 				CA68D08E1BF4914E00D5C130 /* GTL */,
 				CA68D0E91BF491BF00D5C130 /* API */,
 				C90726961CF8F04600A49B85 /* icons */,
+				C9F818201CFCE2490020F0CB /* Keychain */,
 				C90726971CF9068300A49B85 /* ViewControllers */,
-				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
 				C9E6CC341CF41A11001FCDDF /* MenuItem.swift */,
+				C9F818211CFCFD5B0020F0CB /* Data.swift */,
+				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
 				CA68D0F71BF491EB00D5C130 /* Spotcheck-iOS-Bridging-Header.h */,
 				1A92F3B11CCAE808001C3A4D /* Main.storyboard */,
 				CA68D0831BF4910E00D5C130 /* Assets.xcassets */,
@@ -472,13 +491,16 @@
 				C9337C941CB678BE00572BF3 /* User.m in Sources */,
 				CA68D0E11BF4914E00D5C130 /* GTLQuery.m in Sources */,
 				C924927C1CF9632500402E99 /* LoginViewController.swift in Sources */,
+				C9F8181F1CFCE2410020F0CB /* KeychainWrapper.m in Sources */,
 				CA68D0E01BF4914E00D5C130 /* GTLObject.m in Sources */,
 				CA68D0E51BF4914E00D5C130 /* GTLBase64.m in Sources */,
 				CA68D0D41BF4914E00D5C130 /* GTMHTTPFetchHistory.m in Sources */,
+				C9F818221CFCFD5B0020F0CB /* Data.swift in Sources */,
 				CA68D0E81BF4914E00D5C130 /* GTLUtilities.m in Sources */,
 				CA68D0E71BF4914E00D5C130 /* GTLJSONParser.m in Sources */,
 				CA68D0E61BF4914E00D5C130 /* GTLFramework.m in Sources */,
 				CA68D0E31BF4914E00D5C130 /* GTLService.m in Sources */,
+				C9F818241CFD06F00020F0CB /* ProfileViewController.swift in Sources */,
 				CA68D0D21BF4914E00D5C130 /* GTMHTTPFetcherLogViewController.m in Sources */,
 				CA68D07D1BF4910E00D5C130 /* AppDelegate.swift in Sources */,
 				C9337C981CB678BE00572BF3 /* SpotcheckApiConstants.m in Sources */,
