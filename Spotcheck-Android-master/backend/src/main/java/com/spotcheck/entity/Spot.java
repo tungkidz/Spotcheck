@@ -1,7 +1,9 @@
 package com.spotcheck.entity;
 
+import com.google.appengine.api.datastore.Blob;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,8 @@ public class Spot {
     String type;
     String city;
     String state;
+    Blob photo;
+    @Index Long profileId;
     ArrayList<String> tags;
 
     public Spot(){}
@@ -34,6 +38,9 @@ public class Spot {
 
     public Long getId(){return id;}
     public void setId(Long _id){this.id = _id;}
+
+    public Long getProfileId(){return profileId;}
+    public void setProfileId(Long _id){this.profileId = _id;}
 
     public String getName(){return name;}
     public void setName(String _name){this.name = _name;}
@@ -52,4 +59,7 @@ public class Spot {
 
     public ArrayList<String> getTags(){return tags;}
     public void setTags(ArrayList<String> _tags){this.tags = _tags;}
+
+    public Blob getPhoto() { return photo; }
+    public void setPhoto(Blob photo) { this.photo = photo; }
 }

@@ -222,10 +222,10 @@
                                 <items>
                                     <navigationItem title="Spotcheck" id="4Tg-Zf-kNG">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="MJE-D8-wB0">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Zk-IA-ZTJ">
-                                                <rect key="frame" x="16" y="7" width="75" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Zk-IA-ZTJ">
+                                                <rect key="frame" x="16" y="2" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Menu"/>
+                                                <state key="normal" image="menu_black_48px.png"/>
                                                 <connections>
                                                     <action selector="MenuClicked:" destination="CHg-XJ-NWj" eventType="touchUpInside" id="3Sv-M2-xmp"/>
                                                 </connections>
@@ -240,12 +240,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njd-Nq-vCW" customClass="AddButtonView" customModule="Spotcheck_iOS_temp_caseinsensitive_rename" customModuleProvider="target">
+                                <rect key="frame" x="247" y="495" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8b2-Vv-zDC"/>
+                                    <constraint firstAttribute="width" constant="65" id="VwR-mi-VbO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="CHg-XJ-NWj" eventType="touchUpInside" id="tKB-Nf-JLR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="30p-9S-4bC" firstAttribute="leading" secondItem="wbn-yL-gix" secondAttribute="leadingMargin" constant="-16" id="XDa-cm-Z0j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="30p-9S-4bC" secondAttribute="trailing" constant="-16" id="aQY-wO-Onz"/>
                             <constraint firstItem="30p-9S-4bC" firstAttribute="top" secondItem="BZj-xe-ncz" secondAttribute="bottom" id="eAx-32-Cea"/>
+                            <constraint firstItem="dk9-bc-xTD" firstAttribute="top" secondItem="njd-Nq-vCW" secondAttribute="bottom" constant="10" id="u1M-GW-Qqh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="njd-Nq-vCW" secondAttribute="trailing" id="zvk-4z-6zs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="BOo-iB-trO"/>
@@ -298,10 +313,10 @@
                                 <items>
                                     <navigationItem title="Spotcheck" id="Ew6-3H-LsO">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="FIa-yb-vLo">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jx5-GN-hsj">
-                                                <rect key="frame" x="16" y="7" width="75" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jx5-GN-hsj">
+                                                <rect key="frame" x="16" y="2" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Menu"/>
+                                                <state key="normal" image="menu_black_48px.png"/>
                                                 <connections>
                                                     <action selector="MenuClicked:" destination="nix-JH-stv" eventType="touchUpInside" id="VbJ-2U-eln"/>
                                                 </connections>
@@ -351,10 +366,10 @@
                                 <items>
                                     <navigationItem title="Spotcheck" id="usN-8u-2Wu">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="7Uk-Oj-xj3">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bWx-V4-mJ2">
-                                                <rect key="frame" x="16" y="7" width="75" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="bWx-V4-mJ2">
+                                                <rect key="frame" x="16" y="2" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Menu"/>
+                                                <state key="normal" image="menu_black_48px.png"/>
                                                 <connections>
                                                     <action selector="MenuClicked:" destination="rZO-aT-xbX" eventType="touchUpInside" id="Djb-7E-bGJ"/>
                                                 </connections>
@@ -388,7 +403,7 @@
         <!--Capture-->
         <scene sceneID="zq9-wf-OAU">
             <objects>
-                <viewController storyboardIdentifier="CaptureViewController" title="Capture" id="6ro-Ru-hRz" customClass="MainViewController" customModule="Spotcheck_iOS_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptureViewController" title="Capture" id="6ro-Ru-hRz" customClass="CaptureViewController" customModule="Spotcheck_iOS_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mKR-2l-tqA"/>
                         <viewControllerLayoutGuide type="bottom" id="0mx-of-DQL"/>
@@ -404,10 +419,10 @@
                                 <items>
                                     <navigationItem title="Spotcheck" id="T55-MB-FvI">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="GX2-uv-NDJ">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aed-sT-jYL">
-                                                <rect key="frame" x="16" y="7" width="75" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Aed-sT-jYL">
+                                                <rect key="frame" x="16" y="2" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Menu"/>
+                                                <state key="normal" image="menu_black_48px.png"/>
                                                 <connections>
                                                     <action selector="MenuClicked:" destination="6ro-Ru-hRz" eventType="touchUpInside" id="0rG-7M-llI"/>
                                                 </connections>
@@ -416,12 +431,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kig-oQ-hYp">
-                                <rect key="frame" x="127" y="273" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-ui-o9w">
+                                <rect key="frame" x="40" y="64" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9K-ro-bsh">
+                                <rect key="frame" x="89" y="200" width="142" height="40"/>
+                                <state key="normal" title="Pick a Photo"/>
+                                <connections>
+                                    <action selector="selectButtonClicked:" destination="6ro-Ru-hRz" eventType="touchUpInside" id="dR4-ml-Ylk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter a Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POE-f1-fJo">
+                                <rect key="frame" x="46" y="248" width="229" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVH-2A-BbR">
+                                <rect key="frame" x="80" y="295" width="160" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="6ro-Ru-hRz" eventType="touchUpInside" id="ArL-bo-WEx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -433,14 +464,21 @@
                     <navigationItem key="navigationItem" title="Home" id="l6Y-9O-l3r"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="image" destination="n9V-ui-o9w" id="FlW-Rf-iyH"/>
+                        <outlet property="name" destination="POE-f1-fJo" id="NbK-7J-GCP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9A-uS-DCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742" y="1918"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu_black_48px.png" width="48" height="48"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mQw-g5-Ai9"/>
+        <segue reference="4Z7-HV-a2H"/>
         <segue reference="Jka-BZ-QYN"/>
     </inferredMetricsTieBreakers>
 </document>

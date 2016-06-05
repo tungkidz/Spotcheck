@@ -13,6 +13,7 @@ import com.google.appengine.api.datastore.QueryResultIterator;
 import com.googlecode.objectify.cmd.Query;
 
 import com.spotcheck.entity.Spot;
+import com.spotcheck.form.SpotForm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +77,17 @@ public class SpotApi {
         }
         //Since our @Id field is a Long, Objectify will generate a unique value for us
         //when we use put
+        ofy().save().entity(spot).now();
+        return spot;
+    }
+
+    @ApiMethod(name = "createSpot")
+    public Spot createSpot(SpotForm spotForm)
+    {
+        Spot spot = new Spot();
+        spot.setProfileId(spotForm.getProfileId());
+        spot.setName(spotForm.getName());
+        spot.setPhoto(spotForm.getPhoto());
         ofy().save().entity(spot).now();
         return spot;
     }

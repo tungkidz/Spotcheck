@@ -92,6 +92,31 @@ extension ContainerViewController: MainViewControllerDelegate
     }
     
     /**
+     Updates the menu selection to transition between views
+     
+     Currently only used for add button in profile view
+    */
+    func updateMenuSelection(selection: String)
+    {
+        if (menuViewController == nil)
+        {
+            initializeMenu()
+        }
+        
+        // naive implementation to set menu selection to capture
+        // used when add button clicked in profile
+        menuViewController!.setSelection(3)
+        self.menuSelection = selection
+        
+        // Remove the old screen
+        self.mainViewController!.view.removeFromSuperview()
+        self.mainViewController = nil;
+        
+        // Reset main view
+        self.initialize()
+    }
+    
+    /**
      Toggles the menu on and off
     */
     func toggleMenuPanel()

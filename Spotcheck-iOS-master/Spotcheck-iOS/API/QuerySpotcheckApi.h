@@ -18,6 +18,7 @@
 #endif
 
 @class AccountForm;
+@class SpotForm;
 
 // This interface is a GTLQuery object
 // see the GTL folder for more details
@@ -41,6 +42,8 @@
 // Fetches an Account.
 + (instancetype)createAccount:(AccountForm *)accountForm;
 + (instancetype)authenticateAccount:(NSString *)email:(NSString *)password;
+
++ (instancetype)createSpot:(SpotForm *)spotForm;
 
 
 

@@ -23,9 +23,9 @@
 //
 
 @interface User : GTLObject
-@property (nonatomic, copy) NSString *userId;
-@property (nonatomic, copy) NSString *accountId;
-@property (nonatomic, copy) NSString *profileId;
+@property (nonatomic, copy) NSNumber *userId;
+@property (nonatomic, copy) NSNumber *accountId;
+@property (nonatomic, copy) NSNumber *profileId;
 
 //needs these to match json results
 @property (nonatomic, copy) NSString *etag;

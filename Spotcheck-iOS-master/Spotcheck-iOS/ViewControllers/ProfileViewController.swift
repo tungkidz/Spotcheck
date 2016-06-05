@@ -6,4 +6,10 @@ class ProfileViewController: MainViewController
         super.viewDidLoad()
         
     }
+    
+    @IBAction func addButtonClicked(sender: AnyObject)
+    {
+        super.delegate?.updateMenuSelection("Capture")
+    }
+    
 }

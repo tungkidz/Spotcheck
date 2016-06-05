@@ -24,11 +24,16 @@
 		C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C8E1CB678BE00572BF3 /* QuerySpotcheckApi.m */; };
 		C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C901CB678BE00572BF3 /* ServiceSpotcheckApi.m */; };
 		C9337C981CB678BE00572BF3 /* SpotcheckApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */; };
+		C93E33CD1D04BA6900ECF62B /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E33CC1D04BA6900ECF62B /* AddButtonView.swift */; };
+		C93E33CF1D04CD2D00ECF62B /* menu_black_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = C93E33CE1D04CD2D00ECF62B /* menu_black_48px.png */; };
 		C9C1327F1CF959DC0046E010 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C1327E1CF959DC0046E010 /* MapKit.framework */; };
 		C9E6CC351CF41A11001FCDDF /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E6CC341CF41A11001FCDDF /* MenuItem.swift */; };
 		C9F8181F1CFCE2410020F0CB /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8181E1CFCE2410020F0CB /* KeychainWrapper.m */; };
 		C9F818221CFCFD5B0020F0CB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F818211CFCFD5B0020F0CB /* Data.swift */; };
 		C9F818241CFD06F00020F0CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F818231CFD06F00020F0CB /* ProfileViewController.swift */; };
+		C9F818261CFD129F0020F0CB /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F818251CFD129F0020F0CB /* CaptureViewController.swift */; };
+		C9F818281CFD16F60020F0CB /* SpotForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F818271CFD16F60020F0CB /* SpotForm.m */; };
+		C9F8182C1CFD1B7E0020F0CB /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8182B1CFD1B7E0020F0CB /* Spot.m */; };
 		CA68D07D1BF4910E00D5C130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */; };
 		CA68D0841BF4910E00D5C130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA68D0831BF4910E00D5C130 /* Assets.xcassets */; };
 		CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68D0911BF4914E00D5C130 /* GTMSessionFetcher.m */; };
@@ -85,12 +90,19 @@
 		C9337C911CB678BE00572BF3 /* SpotcheckApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApi.h; sourceTree = "<group>"; };
 		C9337C921CB678BE00572BF3 /* SpotcheckApiConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotcheckApiConstants.h; sourceTree = "<group>"; };
 		C9337C931CB678BE00572BF3 /* SpotcheckApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotcheckApiConstants.m; sourceTree = "<group>"; };
+		C93E33CC1D04BA6900ECF62B /* AddButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		C93E33CE1D04CD2D00ECF62B /* menu_black_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_black_48px.png; sourceTree = "<group>"; };
 		C9C1327E1CF959DC0046E010 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9E6CC341CF41A11001FCDDF /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		C9F8181D1CFCE2410020F0CB /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = Keychain/KeychainWrapper.h; sourceTree = "<group>"; };
 		C9F8181E1CFCE2410020F0CB /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = Keychain/KeychainWrapper.m; sourceTree = "<group>"; };
 		C9F818211CFCFD5B0020F0CB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C9F818231CFD06F00020F0CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		C9F818251CFD129F0020F0CB /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptureViewController.swift; path = ViewControllers/CaptureViewController.swift; sourceTree = "<group>"; };
+		C9F818271CFD16F60020F0CB /* SpotForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotForm.m; sourceTree = "<group>"; };
+		C9F818291CFD17030020F0CB /* SpotForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotForm.h; sourceTree = "<group>"; };
+		C9F8182A1CFD1B720020F0CB /* Spot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spot.h; sourceTree = "<group>"; };
+		C9F8182B1CFD1B7E0020F0CB /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spot.m; sourceTree = "<group>"; };
 		CA68D0791BF4910E00D5C130 /* Spotcheck-iOS.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotcheck-iOS.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA68D0831BF4910E00D5C130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +182,7 @@
 		C90726961CF8F04600A49B85 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				C93E33CE1D04CD2D00ECF62B /* menu_black_48px.png */,
 				C924926A1CF962F800402E99 /* alerts_black_48px.png */,
 				C924926B1CF962F800402E99 /* camera_black_48px.png */,
 				C924926C1CF962F800402E99 /* exit_black_48px.png */,
@@ -189,6 +202,7 @@
 				C92492791CF9632500402E99 /* MenuTableViewController.swift */,
 				C924927A1CF9632500402E99 /* RegisterViewController.swift */,
 				C9F818231CFD06F00020F0CB /* ProfileViewController.swift */,
+				C9F818251CFD129F0020F0CB /* CaptureViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +212,8 @@
 			children = (
 				C9337C891CB678BE00572BF3 /* User.h */,
 				C9337C8A1CB678BE00572BF3 /* User.m */,
+				C9F8182A1CFD1B720020F0CB /* Spot.h */,
+				C9F8182B1CFD1B7E0020F0CB /* Spot.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -207,6 +223,8 @@
 			children = (
 				C9337C8B1CB678BE00572BF3 /* AccountForm.h */,
 				C9337C8C1CB678BE00572BF3 /* AccountForm.m */,
+				C9F818291CFD17030020F0CB /* SpotForm.h */,
+				C9F818271CFD16F60020F0CB /* SpotForm.m */,
 			);
 			name = Forms;
 			sourceTree = "<group>";
@@ -273,6 +291,7 @@
 				C9F818201CFCE2490020F0CB /* Keychain */,
 				C90726971CF9068300A49B85 /* ViewControllers */,
 				C9E6CC341CF41A11001FCDDF /* MenuItem.swift */,
+				C93E33CC1D04BA6900ECF62B /* AddButtonView.swift */,
 				C9F818211CFCFD5B0020F0CB /* Data.swift */,
 				CA68D07C1BF4910E00D5C130 /* AppDelegate.swift */,
 				CA68D0F71BF491EB00D5C130 /* Spotcheck-iOS-Bridging-Header.h */,
@@ -467,6 +486,7 @@
 				C92492721CF962F800402E99 /* exit_black_48px.png in Resources */,
 				C92492711CF962F800402E99 /* camera_black_48px.png in Resources */,
 				1A92F3B31CCAE808001C3A4D /* Main.storyboard in Resources */,
+				C93E33CF1D04CD2D00ECF62B /* menu_black_48px.png in Resources */,
 				C92492741CF962F800402E99 /* profile_black_48px.png in Resources */,
 				CA68D0DB1BF4914E00D5C130 /* GTMOAuth2ViewTouch.xib in Resources */,
 				C92492731CF962F800402E99 /* message_black_48px.png in Resources */,
@@ -487,7 +507,9 @@
 				C924927B1CF9632500402E99 /* ContainerViewController.swift in Sources */,
 				C9337C961CB678BE00572BF3 /* QuerySpotcheckApi.m in Sources */,
 				C9337C951CB678BE00572BF3 /* AccountForm.m in Sources */,
+				C9F8182C1CFD1B7E0020F0CB /* Spot.m in Sources */,
 				CA68D0D01BF4914E00D5C130 /* GTMHTTPFetcher.m in Sources */,
+				C9F818261CFD129F0020F0CB /* CaptureViewController.swift in Sources */,
 				C9337C941CB678BE00572BF3 /* User.m in Sources */,
 				CA68D0E11BF4914E00D5C130 /* GTLQuery.m in Sources */,
 				C924927C1CF9632500402E99 /* LoginViewController.swift in Sources */,
@@ -496,6 +518,7 @@
 				CA68D0E51BF4914E00D5C130 /* GTLBase64.m in Sources */,
 				CA68D0D41BF4914E00D5C130 /* GTMHTTPFetchHistory.m in Sources */,
 				C9F818221CFCFD5B0020F0CB /* Data.swift in Sources */,
+				C9F818281CFD16F60020F0CB /* SpotForm.m in Sources */,
 				CA68D0E81BF4914E00D5C130 /* GTLUtilities.m in Sources */,
 				CA68D0E71BF4914E00D5C130 /* GTLJSONParser.m in Sources */,
 				CA68D0E61BF4914E00D5C130 /* GTLFramework.m in Sources */,
@@ -513,6 +536,7 @@
 				CA68D0D91BF4914E00D5C130 /* GTMOAuth2SignIn.m in Sources */,
 				CA68D0D51BF4914E00D5C130 /* GTMHTTPUploadFetcher.m in Sources */,
 				C9337C971CB678BE00572BF3 /* ServiceSpotcheckApi.m in Sources */,
+				C93E33CD1D04BA6900ECF62B /* AddButtonView.swift in Sources */,
 				CA68D0CD1BF4914E00D5C130 /* GTMSessionFetcher.m in Sources */,
 				CA68D0D11BF4914E00D5C130 /* GTMHTTPFetcherLogging.m in Sources */,
 				CA68D0D31BF4914E00D5C130 /* GTMHTTPFetcherService.m in Sources */,

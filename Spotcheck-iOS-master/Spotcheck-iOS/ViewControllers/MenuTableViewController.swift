@@ -38,10 +38,19 @@ class MenuTableViewController: UITableViewController
     
     /**
      Sets the default menu item selection
-    */
+     */
     func setDefaultSelection()
     {
         let index: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0);
+        menuView.selectRowAtIndexPath(index, animated: true, scrollPosition:  UITableViewScrollPosition.None)
+    }
+    
+    /**
+     Sets the default menu item selection
+     */
+    func setSelection(selectionIndex: Int)
+    {
+        let index: NSIndexPath = NSIndexPath(forRow: selectionIndex, inSection: 0);
         menuView.selectRowAtIndexPath(index, animated: true, scrollPosition:  UITableViewScrollPosition.None)
     }
     

@@ -6,5 +6,7 @@
 #import "ServiceSpotcheckApi.h"
 #import "QuerySpotcheckApi.h"
 #import "AccountForm.h"
+#import "SpotForm.h"
 #import "User.h"
+#import "Spot.h"
 #import "KeychainWrapper.h"

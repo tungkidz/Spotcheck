@@ -15,7 +15,9 @@
 #import "QuerySpotcheckApi.h"
 
 #import "User.h"
+#import "Spot.h"
 #import "AccountForm.h"
+#import "SpotForm.h"
 
 @implementation QuerySpotcheckApi
 
@@ -41,6 +43,15 @@
     query.email = email;
     query.password = password;
     query.expectedObjectClass = [User class];
+    return query;
+}
+
++ (instancetype)createSpot:(SpotForm *)spotForm
+{
+    NSString *methodName = @"spotApi.createSpot";
+    QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
+    query.bodyObject = spotForm;
+    query.expectedObjectClass = [Spot class];
     return query;
 }
 

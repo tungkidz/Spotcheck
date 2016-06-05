@@ -14,6 +14,7 @@ protocol MainViewControllerDelegate
 {
     optional func toggleMenuPanel()
     optional func collapseMenuPanels()
+    func updateMenuSelection(selection: String)
 }
 
 /**
